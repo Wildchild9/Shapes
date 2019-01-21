@@ -8,12 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		C27FF18E21F4F32100F499E1 /* DrawingLines.h in Headers */ = {isa = PBXBuildFile; fileRef = C27FF18C21F4F32100F499E1 /* DrawingLines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C27FF19721F4F37C00F499E1 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FF19621F4F37C00F499E1 /* Drawable.swift */; };
+		C27FF19921F4F6DB00F499E1 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FF19821F4F6DB00F499E1 /* Shape.swift */; };
+		C27FF19B21F5097600F499E1 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FF19A21F5097600F499E1 /* Gradient.swift */; };
+		C290A03821F52B6200D89483 /* UIBezierPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03721F52B6200D89483 /* UIBezierPath+Extensions.swift */; };
+		C290A03A21F52B6800D89483 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03921F52B6800D89483 /* Line.swift */; };
+		C290A03C21F534E900D89483 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03B21F534E900D89483 /* Collection+Extensions.swift */; };
+		C290A03E21F55BDF00D89483 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03D21F55BDF00D89483 /* CGPoint+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C27FF18921F4F32100F499E1 /* DrawingLines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DrawingLines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27FF18C21F4F32100F499E1 /* DrawingLines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingLines.h; sourceTree = "<group>"; };
 		C27FF18D21F4F32100F499E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C27FF19421F4F33300F499E1 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C27FF19621F4F37C00F499E1 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
+		C27FF19821F4F6DB00F499E1 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		C27FF19A21F5097600F499E1 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		C290A03721F52B6200D89483 /* UIBezierPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Extensions.swift"; sourceTree = "<group>"; };
+		C290A03921F52B6800D89483 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
+		C290A03B21F534E900D89483 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
+		C290A03D21F55BDF00D89483 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,10 +61,26 @@
 		C27FF18B21F4F32100F499E1 /* DrawingLines */ = {
 			isa = PBXGroup;
 			children = (
+				C27FF19421F4F33300F499E1 /* Testing.playground */,
+				C27FF19521F4F33D00F499E1 /* Supporting Files */,
+				C27FF19621F4F37C00F499E1 /* Drawable.swift */,
+				C27FF19821F4F6DB00F499E1 /* Shape.swift */,
+				C27FF19A21F5097600F499E1 /* Gradient.swift */,
+				C290A03721F52B6200D89483 /* UIBezierPath+Extensions.swift */,
+				C290A03921F52B6800D89483 /* Line.swift */,
+				C290A03B21F534E900D89483 /* Collection+Extensions.swift */,
+				C290A03D21F55BDF00D89483 /* CGPoint+Extensions.swift */,
+			);
+			path = DrawingLines;
+			sourceTree = "<group>";
+		};
+		C27FF19521F4F33D00F499E1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				C27FF18C21F4F32100F499E1 /* DrawingLines.h */,
 				C27FF18D21F4F32100F499E1 /* Info.plist */,
 			);
-			path = DrawingLines;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,6 +126,7 @@
 				TargetAttributes = {
 					C27FF18821F4F32100F499E1 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
@@ -130,6 +162,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C290A03E21F55BDF00D89483 /* CGPoint+Extensions.swift in Sources */,
+				C27FF19721F4F37C00F499E1 /* Drawable.swift in Sources */,
+				C27FF19921F4F6DB00F499E1 /* Shape.swift in Sources */,
+				C27FF19B21F5097600F499E1 /* Gradient.swift in Sources */,
+				C290A03821F52B6200D89483 /* UIBezierPath+Extensions.swift in Sources */,
+				C290A03A21F52B6800D89483 /* Line.swift in Sources */,
+				C290A03C21F534E900D89483 /* Collection+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +300,7 @@
 		C27FF19221F4F32100F499E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -268,7 +308,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DrawingLines/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DrawingLines/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -278,6 +318,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.noahwilder.DrawingLines;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +327,7 @@
 		C27FF19321F4F32100F499E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -293,7 +335,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = DrawingLines/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/DrawingLines/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
