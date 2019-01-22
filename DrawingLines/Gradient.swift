@@ -20,8 +20,8 @@ public struct Gradient {
         }
     }
     
-    public private(set) var startPoint: CGPoint = .zero
-    public private(set) var endPoint: CGPoint = .zero
+    public private(set) var startPoint = CGPoint(x: 0, y: 0.5)
+    public private(set) var endPoint = CGPoint(x: 1, y: 0.5)
     
     public init (of colors: [UIColor], angle: CGFloat = 0.0) {
         self.colors = colors
@@ -30,6 +30,10 @@ public struct Gradient {
     }
     public init (of colors: UIColor..., angle: CGFloat = 0.0) {
         self.init(of: colors, angle: angle)
+    }
+    
+    public init (color: UIColor) {
+        self.colors = [color]
     }
 
     private mutating func updatePoints() {
@@ -77,6 +81,7 @@ public extension Gradient {
     public func uiColor(forFrame frame: CGRect) -> UIColor {
         
         guard !colors.isEmpty else { return .clear }
+        guard colors.count != 1 else { return colors.first! }
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors
@@ -134,10 +139,36 @@ public extension Gradient {
     public static let electricViolet = Gradient(of: #colorLiteral(red: 0.2784313725, green: 0.462745098, blue: 0.9019607843, alpha: 1), #colorLiteral(red: 0.5568627451, green: 0.3294117647, blue: 0.9137254902, alpha: 1))
     public static let backToEarth = Gradient(of: #colorLiteral(red: 0, green: 0.7882352941, blue: 1, alpha: 1), #colorLiteral(red: 0.5725490196, green: 0.9960784314, blue: 0.6156862745, alpha: 1))
     public static let shahabi = Gradient(of: #colorLiteral(red: 0.6588235294, green: 0, blue: 0.4666666667, alpha: 1), #colorLiteral(red: 0.4, green: 1, blue: 0, alpha: 1))
-//    public static let <#Name#> = Gradient(of: <#UIColor...#>)
-//    public static let <#Name#> = Gradient(of: <#UIColor...#>)
-//    public static let <#Name#> = Gradient(of: <#UIColor...#>)
 
+//    public static let <#name#> = Gradient(of: <#UIColor...#>)
+//    public static let <#name#> = Gradient(of: <#UIColor...#>)
+//    public static let <#name#> = Gradient(of: <#UIColor...#>)
+
+}
+
+
+public extension Gradient {
+    public struct color {
+        
+        private init() { }
+        
+        public static let black = Gradient(color: UIColor.black)
+        public static let darkGray = Gradient(color: UIColor.darkGray)
+        public static let lightGray = Gradient(color: UIColor.lightGray)
+        public static let white = Gradient(color: UIColor.white)
+        public static let gray = Gradient(color: UIColor.gray)
+        public static let red = Gradient(color: UIColor.red)
+        public static let green = Gradient(color: UIColor.green)
+        public static let blue = Gradient(color: UIColor.blue)
+        public static let cyan = Gradient(color: UIColor.cyan)
+        public static let yellow = Gradient(color: UIColor.yellow)
+        public static let magenta = Gradient(color: UIColor.magenta)
+        public static let orange = Gradient(color: UIColor.orange)
+        public static let purple = Gradient(color: UIColor.purple)
+        public static let brown = Gradient(color: UIColor.brown)
+        public static let clear = Gradient(color: UIColor.clear)
+
+    }
 }
 
 
@@ -145,9 +176,9 @@ public extension Gradient {
 ////￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭￭\\\\\
 //MARK: - Other Functions
 public extension Gradient {
-    public func angled(_ x: CGFloat) -> Gradient {
+    public func withAngle(of θ: CGFloat) -> Gradient {
         var gradient = self
-        gradient.angle = x
+        gradient.angle = θ
         return gradient
     }
 }

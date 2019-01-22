@@ -15,6 +15,9 @@
 		C290A03A21F52B6800D89483 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03921F52B6800D89483 /* Line.swift */; };
 		C290A03C21F534E900D89483 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03B21F534E900D89483 /* Collection+Extensions.swift */; };
 		C290A03E21F55BDF00D89483 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03D21F55BDF00D89483 /* CGPoint+Extensions.swift */; };
+		C2B83DFC21F6104D00D09B68 /* Shape2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B83DFB21F6104D00D09B68 /* Shape2.swift */; };
+		C2B83DFE21F6111800D09B68 /* Degrees+Radians+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B83DFD21F6111800D09B68 /* Degrees+Radians+Conversions.swift */; };
+		C2B83E0021F619B600D09B68 /* CGColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B83DFF21F619B600D09B68 /* CGColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		C290A03921F52B6800D89483 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		C290A03B21F534E900D89483 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		C290A03D21F55BDF00D89483 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
+		C2B83DFB21F6104D00D09B68 /* Shape2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape2.swift; sourceTree = "<group>"; };
+		C2B83DFD21F6111800D09B68 /* Degrees+Radians+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Degrees+Radians+Conversions.swift"; sourceTree = "<group>"; };
+		C2B83DFF21F619B600D09B68 /* CGColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,11 +71,14 @@
 				C27FF19521F4F33D00F499E1 /* Supporting Files */,
 				C27FF19621F4F37C00F499E1 /* Drawable.swift */,
 				C27FF19821F4F6DB00F499E1 /* Shape.swift */,
+				C2B83DFB21F6104D00D09B68 /* Shape2.swift */,
 				C27FF19A21F5097600F499E1 /* Gradient.swift */,
 				C290A03721F52B6200D89483 /* UIBezierPath+Extensions.swift */,
 				C290A03921F52B6800D89483 /* Line.swift */,
 				C290A03B21F534E900D89483 /* Collection+Extensions.swift */,
 				C290A03D21F55BDF00D89483 /* CGPoint+Extensions.swift */,
+				C2B83DFD21F6111800D09B68 /* Degrees+Radians+Conversions.swift */,
+				C2B83DFF21F619B600D09B68 /* CGColor+Extensions.swift */,
 			);
 			path = DrawingLines;
 			sourceTree = "<group>";
@@ -164,7 +173,10 @@
 			files = (
 				C290A03E21F55BDF00D89483 /* CGPoint+Extensions.swift in Sources */,
 				C27FF19721F4F37C00F499E1 /* Drawable.swift in Sources */,
+				C2B83DFC21F6104D00D09B68 /* Shape2.swift in Sources */,
+				C2B83E0021F619B600D09B68 /* CGColor+Extensions.swift in Sources */,
 				C27FF19921F4F6DB00F499E1 /* Shape.swift in Sources */,
+				C2B83DFE21F6111800D09B68 /* Degrees+Radians+Conversions.swift in Sources */,
 				C27FF19B21F5097600F499E1 /* Gradient.swift in Sources */,
 				C290A03821F52B6200D89483 /* UIBezierPath+Extensions.swift in Sources */,
 				C290A03A21F52B6800D89483 /* Line.swift in Sources */,

@@ -172,12 +172,12 @@ public extension Shape {
         return shape
     }
     
-    public enum Flip {
-        case horizontally, vertically
-    }
-    public mutating func flip(_ direction: Flip) {
-        #warning("Flip shape incomplete")
-    }
+//    public enum Flip {
+//        case horizontally, vertically
+//    }
+//    public mutating func flip(_ direction: Flip) {
+//        #warning("Flip shape incomplete")
+//    }
 
 }
 
@@ -312,21 +312,6 @@ extension Shape: Drawable {
         return view
     }
 }
-
-
-
-public extension BinaryInteger {
-    public var degreesToRadians: CGFloat { return CGFloat(Int(self)) * .pi / 180 }
-}
-
-public extension FloatingPoint {
-    public var degreesToRadians: Self { return self * .pi / 180 }
-    public var radiansToDegrees: Self { return self * 180 / .pi }
-}
-
-
-
-
 
 
 
