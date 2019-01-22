@@ -7,34 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C2344F1621F76095004235CC /* Array<Components>+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2344F1521F76095004235CC /* Array<Components>+Extensions.swift */; };
+		C2344F1821F76182004235CC /* Coordinate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2344F1721F76181004235CC /* Coordinate.swift */; };
+		C2344F1A21F761D9004235CC /* Conformances.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2344F1921F761D9004235CC /* Conformances.swift */; };
+		C2344F1C21F767A0004235CC /* Transformations.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2344F1B21F767A0004235CC /* Transformations.swift */; };
+		C2344F1E21F78529004235CC /* Shape+Creation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2344F1D21F78529004235CC /* Shape+Creation.swift */; };
+		C2344F2021F78802004235CC /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2344F1F21F78802004235CC /* Operators.swift */; };
+		C2344F2221F78868004235CC /* Shape+Manipulation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2344F2121F78868004235CC /* Shape+Manipulation.swift */; };
 		C27FF18E21F4F32100F499E1 /* DrawingLines.h in Headers */ = {isa = PBXBuildFile; fileRef = C27FF18C21F4F32100F499E1 /* DrawingLines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C27FF19721F4F37C00F499E1 /* Drawable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FF19621F4F37C00F499E1 /* Drawable.swift */; };
-		C27FF19921F4F6DB00F499E1 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FF19821F4F6DB00F499E1 /* Shape.swift */; };
 		C27FF19B21F5097600F499E1 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C27FF19A21F5097600F499E1 /* Gradient.swift */; };
 		C290A03821F52B6200D89483 /* UIBezierPath+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03721F52B6200D89483 /* UIBezierPath+Extensions.swift */; };
 		C290A03A21F52B6800D89483 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03921F52B6800D89483 /* Line.swift */; };
 		C290A03C21F534E900D89483 /* Collection+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03B21F534E900D89483 /* Collection+Extensions.swift */; };
 		C290A03E21F55BDF00D89483 /* CGPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290A03D21F55BDF00D89483 /* CGPoint+Extensions.swift */; };
-		C2B83DFC21F6104D00D09B68 /* Shape2.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B83DFB21F6104D00D09B68 /* Shape2.swift */; };
+		C2B83DFC21F6104D00D09B68 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B83DFB21F6104D00D09B68 /* Shape.swift */; };
 		C2B83DFE21F6111800D09B68 /* Degrees+Radians+Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B83DFD21F6111800D09B68 /* Degrees+Radians+Conversions.swift */; };
 		C2B83E0021F619B600D09B68 /* CGColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B83DFF21F619B600D09B68 /* CGColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C2344F1521F76095004235CC /* Array<Components>+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array<Components>+Extensions.swift"; sourceTree = "<group>"; };
+		C2344F1721F76181004235CC /* Coordinate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinate.swift; sourceTree = "<group>"; };
+		C2344F1921F761D9004235CC /* Conformances.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conformances.swift; sourceTree = "<group>"; };
+		C2344F1B21F767A0004235CC /* Transformations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformations.swift; sourceTree = "<group>"; };
+		C2344F1D21F78529004235CC /* Shape+Creation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Creation.swift"; sourceTree = "<group>"; };
+		C2344F1F21F78802004235CC /* Operators.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
+		C2344F2121F78868004235CC /* Shape+Manipulation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Manipulation.swift"; sourceTree = "<group>"; };
 		C27FF18921F4F32100F499E1 /* DrawingLines.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DrawingLines.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C27FF18C21F4F32100F499E1 /* DrawingLines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawingLines.h; sourceTree = "<group>"; };
 		C27FF18D21F4F32100F499E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C27FF19421F4F33300F499E1 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C27FF19621F4F37C00F499E1 /* Drawable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drawable.swift; sourceTree = "<group>"; };
-		C27FF19821F4F6DB00F499E1 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		C27FF19A21F5097600F499E1 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		C290A03721F52B6200D89483 /* UIBezierPath+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Extensions.swift"; sourceTree = "<group>"; };
 		C290A03921F52B6800D89483 /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		C290A03B21F534E900D89483 /* Collection+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Extensions.swift"; sourceTree = "<group>"; };
 		C290A03D21F55BDF00D89483 /* CGPoint+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGPoint+Extensions.swift"; sourceTree = "<group>"; };
-		C2B83DFB21F6104D00D09B68 /* Shape2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape2.swift; sourceTree = "<group>"; };
+		C2B83DFB21F6104D00D09B68 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
 		C2B83DFD21F6111800D09B68 /* Degrees+Radians+Conversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Degrees+Radians+Conversions.swift"; sourceTree = "<group>"; };
 		C2B83DFF21F619B600D09B68 /* CGColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+Extensions.swift"; sourceTree = "<group>"; };
+		C2CC34DC21F7A80300248698 /* Testing.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Testing.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +60,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2344F1421F7605E004235CC /* Shape */ = {
+			isa = PBXGroup;
+			children = (
+				C2B83DFB21F6104D00D09B68 /* Shape.swift */,
+				C2344F1521F76095004235CC /* Array<Components>+Extensions.swift */,
+				C2344F1721F76181004235CC /* Coordinate.swift */,
+				C2344F1921F761D9004235CC /* Conformances.swift */,
+				C2344F1B21F767A0004235CC /* Transformations.swift */,
+				C2344F1D21F78529004235CC /* Shape+Creation.swift */,
+				C2344F1F21F78802004235CC /* Operators.swift */,
+				C2344F2121F78868004235CC /* Shape+Manipulation.swift */,
+			);
+			path = Shape;
+			sourceTree = "<group>";
+		};
 		C27FF17F21F4F32100F499E1 = {
 			isa = PBXGroup;
 			children = (
@@ -67,11 +94,9 @@
 		C27FF18B21F4F32100F499E1 /* DrawingLines */ = {
 			isa = PBXGroup;
 			children = (
-				C27FF19421F4F33300F499E1 /* Testing.playground */,
-				C27FF19521F4F33D00F499E1 /* Supporting Files */,
+				C2CC34DC21F7A80300248698 /* Testing.playground */,
+				C2344F1421F7605E004235CC /* Shape */,
 				C27FF19621F4F37C00F499E1 /* Drawable.swift */,
-				C27FF19821F4F6DB00F499E1 /* Shape.swift */,
-				C2B83DFB21F6104D00D09B68 /* Shape2.swift */,
 				C27FF19A21F5097600F499E1 /* Gradient.swift */,
 				C290A03721F52B6200D89483 /* UIBezierPath+Extensions.swift */,
 				C290A03921F52B6800D89483 /* Line.swift */,
@@ -79,6 +104,7 @@
 				C290A03D21F55BDF00D89483 /* CGPoint+Extensions.swift */,
 				C2B83DFD21F6111800D09B68 /* Degrees+Radians+Conversions.swift */,
 				C2B83DFF21F619B600D09B68 /* CGColor+Extensions.swift */,
+				C27FF19521F4F33D00F499E1 /* Supporting Files */,
 			);
 			path = DrawingLines;
 			sourceTree = "<group>";
@@ -171,14 +197,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2344F2221F78868004235CC /* Shape+Manipulation.swift in Sources */,
 				C290A03E21F55BDF00D89483 /* CGPoint+Extensions.swift in Sources */,
 				C27FF19721F4F37C00F499E1 /* Drawable.swift in Sources */,
-				C2B83DFC21F6104D00D09B68 /* Shape2.swift in Sources */,
+				C2B83DFC21F6104D00D09B68 /* Shape.swift in Sources */,
 				C2B83E0021F619B600D09B68 /* CGColor+Extensions.swift in Sources */,
-				C27FF19921F4F6DB00F499E1 /* Shape.swift in Sources */,
+				C2344F1C21F767A0004235CC /* Transformations.swift in Sources */,
 				C2B83DFE21F6111800D09B68 /* Degrees+Radians+Conversions.swift in Sources */,
+				C2344F1E21F78529004235CC /* Shape+Creation.swift in Sources */,
+				C2344F1821F76182004235CC /* Coordinate.swift in Sources */,
 				C27FF19B21F5097600F499E1 /* Gradient.swift in Sources */,
 				C290A03821F52B6200D89483 /* UIBezierPath+Extensions.swift in Sources */,
+				C2344F1621F76095004235CC /* Array<Components>+Extensions.swift in Sources */,
+				C2344F2021F78802004235CC /* Operators.swift in Sources */,
+				C2344F1A21F761D9004235CC /* Conformances.swift in Sources */,
 				C290A03A21F52B6800D89483 /* Line.swift in Sources */,
 				C290A03C21F534E900D89483 /* Collection+Extensions.swift in Sources */,
 			);
