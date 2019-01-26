@@ -29,6 +29,9 @@ import Foundation
 //┃ MARK: - Shape Declaration
 public struct Shape {
     
+    internal let padding: CGFloat = 7.5
+    internal var extendedPadding: CGFloat { return padding + options.pointRadius }
+
     public private(set) var components = [Component]()
     public var fill: Gradient = .sunrise
     public var options = Options()
@@ -41,17 +44,59 @@ public struct Shape {
         public var lineCap: CAShapeLayerLineCap = .round
         public var lineJoin: CAShapeLayerLineJoin = .round
         public var fillInShape = false
-        public var shadowColor = UIColor.black.cgColor
+        public var shadowColor = UIColor.black
         public var shadowOpacity: Float = 0.2
         public var shadowRadius: CGFloat = 2
         public var shadowOffset = CGSize(width: 1, height: 1)
+        
+        public var displayPoints = false
+        public var pointFill: PointFill = .default
+        public var pointRadius: CGFloat {
+            get {
+                return useDefaultRadius ? defaultPointRadius : _radius
+            }
+            set {
+                useDefaultRadius = false
+                _radius = newValue
+            }
+        }
+        public var usePointShadow = true
+        
+        private var _radius: CGFloat = 0
+        private var useDefaultRadius: Bool = true
+        private var defaultPointRadius: CGFloat { return lineWidth + 1 }
+        
+        public enum PointFill {
+            case color(UIColor)
+            case relativeToBackground
+            case `default`
+            case black
+            case white
+        }
+    }
+    
+    public enum AllOptions {
+        case lineWidth(CGFloat)
+        case lineCap(CAShapeLayerLineCap)
+        case lineJoin(CAShapeLayerLineJoin)
+        case fillInShape(Bool)
+        case shadowColor(UIColor)
+        case shadowOpacity(Float)
+        case shadowRadius(CGFloat)
+        case shadowOffset(CGSize)
+        case showPoints
+        case hidePoints
+        case pointFill(Options.PointFill)
+        case pointRadius(CGFloat)
+        case usePointShadow(Bool)
+        case fill(Gradient)
+        case fillAngle(CGFloat)
     }
     
     public enum Component {
         case point(CGFloat, CGFloat)
         case close
         case `break`
-        
         
         public func to(_ x: CGFloat, _ y: CGFloat) -> [Component] {
             return [self, .point(x, y)]
@@ -222,6 +267,81 @@ public extension Shape {
             }
         }
     }
+    
+    /// A `UIBezierPath` constructed from the components of the shape. The path is uniformly translated so to only positive coordinates.
+    ///
+    /// - Complexity: O(*n*) where *n* is the number of components in the shape.
+    ///
+    public var path: UIBezierPath {
+        
+        let path = UIBezierPath()
+       
+        // Create path
+        var lastWasBroken = true
+        for component in components {
+            switch component {
+            case let .point(x, y):
+                let point = CGPoint(x: x, y: y)
+                if lastWasBroken {
+                    path.move(to: point)
+                } else {
+                    path.addLine(to: point)
+                }
+                lastWasBroken = false
+                
+            case _ where lastWasBroken: // Can skip the next two cases
+                continue
+                
+            case .break:
+                lastWasBroken = true
+                
+            case .close:
+                if !lastWasBroken {
+                    path.close()
+                    lastWasBroken = true
+                }
+            }
+        }
+        
+        return path
+    }
+    
+    /// A `UIBezierPath` consisting of all of the points from the shape.
+    ///
+    /// - Complexity: O(*n*) where *n* is the number of components in the shape.
+    ///
+    public var pointPaths: [UIBezierPath] {
+        
+        var paths = [UIBezierPath]()
+        
+        for point in points {
+            
+            let radius = options.pointRadius
+            let rect = CGRect(x:  point.x - radius,
+                              y:  point.y - radius,
+                              width:  radius * 2,
+                              height: radius * 2)
+            paths.append(UIBezierPath(ovalIn: rect))
+        }
+        return paths
+    }
+    
+    internal var _pointsAndPaths: [(point: CGPoint, path: UIBezierPath)] {
+        
+        var paths = [(point: CGPoint, path: UIBezierPath)]()
+        
+        for point in points {
+            
+            let radius = options.pointRadius
+            let rect = CGRect(x:  point.x - radius,
+                              y:  point.y - radius,
+                              width:  radius * 2,
+                              height: radius * 2)
+            paths.append((point, UIBezierPath(ovalIn: rect)))
+            
+        }
+        return paths
+    }
 }
 
 
@@ -268,11 +388,65 @@ public extension Shape {
 //┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 //┃ MARK: - Applying Options
 public extension Shape {
+    
+    
     public func withFill(_ gradient: Gradient, angle: CGFloat = 0.0) -> Shape {
         var newShape = self
         newShape.fill = gradient.withAngle(of: angle)
         return newShape
     }
+    
+    public func showingPoints(withFill pointFill: Options.PointFill? = nil) -> Shape {
+        var newShape = self
+        newShape.options.displayPoints = true
+        if let pointFill = pointFill {
+            newShape.options.pointFill = pointFill
+        }
+        return newShape
+    }
+    
+    public func hidingPoints() -> Shape {
+        var newShape = self
+        newShape.options.displayPoints = false
+        return newShape
+    }
+    
+    public mutating func applyOption(_ option: AllOptions) {
+        switch option {
+        case let .lineWidth(value): self.options.lineWidth = value
+        case let .lineCap(value): self.options.lineCap = value
+        case let .lineJoin(value): self.options.lineJoin = value
+        case let .fillInShape(value): self.options.fillInShape = value
+        case let .shadowColor(value): self.options.shadowColor = value
+        case let .shadowOpacity(value): self.options.shadowOpacity = value
+        case let .shadowRadius(value): self.options.shadowRadius = value
+        case let .shadowOffset(value): self.options.shadowOffset = value
+        case let .pointFill(value): self.options.pointFill = value
+        case let .pointRadius(value): self.options.pointRadius = value
+        case let .usePointShadow(value): self.options.usePointShadow = value
+        case let .fill(value): self.fill = value
+        case let .fillAngle(value): self.fill.angle = value
+        case .showPoints: self.options.displayPoints = true
+        case .hidePoints: self.options.displayPoints = false
+            
+        }
+    }
+    public mutating func applyOptions(_ options: AllOptions...) {
+        options.forEach { applyOption($0) }
+    }
+    
+    public func applyingOption(_ option: AllOptions) -> Shape {
+        var newShape = self
+        newShape.applyOption(option)
+        return newShape
+    }
+    public func applyingOptions(_ options: AllOptions...) -> Shape {
+        var newShape = self
+        options.forEach { newShape.applyOption($0) }
+        return newShape
+    }
+    
+
 }
 
 
