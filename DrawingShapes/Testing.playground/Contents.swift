@@ -7,7 +7,6 @@ import DrawingShapes
  - radial gradient
  - apply options enum
  */
-print("Hello")
 let gradient = Gradient.argon
 
 Gradient.alihossein
@@ -106,4 +105,4 @@ Shape.crossStar(numberOfPoints: 34, distanceBetweenPoints: 100).applyingOptions(
 let newStar = Shape.crossStar(numberOfPoints: 51).applyingOptions(.fill(.timber), .lineWidth(1.0)).scaled(by: 3)
 
 
-print("Hello")
+print("Finished testing")
