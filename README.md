@@ -76,7 +76,7 @@ Polygon:
 
 ```swift
 var polygonalPrism = Shape.regularPolygon(n: 7, sideLength: 100).prism()
-polygonalPrism.applyOptions(.fill(.electricViolet), .showPoints)
+polygonalPrism.applyingOptions(.fill(.electricViolet), .showPoints)
 ```
 <img width="267" alt="Screenshot 2022-12-08 at 6 39 19 PM" src="https://user-images.githubusercontent.com/35314567/206589609-d16e2480-d8db-4405-b33d-46c7b3744795.png">
 
