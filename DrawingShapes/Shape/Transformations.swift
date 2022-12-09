@@ -156,10 +156,10 @@ public extension Shape {
                 return CGPoint(x: p.x, y: -p.y + 2 * bounds.maxY)
                 
             case .left:
-                return CGPoint(x: -p.x + 2 * bounds.maxX, y: p.y)
+                return CGPoint(x: -p.x + 2 * bounds.minX, y: p.y)
 
             case .right:
-                return CGPoint(x: -p.x + 2 * bounds.minX, y: p.y)
+                return CGPoint(x: -p.x + 2 * bounds.maxX, y: p.y)
                 
             case .centerX:
                 return CGPoint(x: p.x, y: -p.y + 2 * bounds.midY)
